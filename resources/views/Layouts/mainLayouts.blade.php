@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    @include(_header)
+    @include('Layouts._header')
   </head>
   <body>
     <div class="container-scroller">
