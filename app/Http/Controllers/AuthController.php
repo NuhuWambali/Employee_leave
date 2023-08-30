@@ -18,7 +18,7 @@ class AuthController extends Controller
     public function register(){
         return view('auth.register');
     }
-    
+
     public function postLogin(Request $request){
         $request->validate([
             'email'=>'required',
@@ -26,9 +26,9 @@ class AuthController extends Controller
         ]);
         $data=$request->only('email','password');
         if(Auth::attempt($data)){
-        return redirect('/')->with('message',"Welcome to Plan Manager...it's time  for planning your life....!");
+        return redirect('/home')->with('message',"logged in successfully");
         }
-        
+            
         return redirect('/login');
     }
 
@@ -56,6 +56,7 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/login');
     }
+
 }
 
 
