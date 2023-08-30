@@ -7,10 +7,3 @@ Leave Request: Employees can submit leave requests specifying dates, leave type,
 Leave Approval: Managers can review and approve/reject leave requests based on company policies.
 Dashboard: Users have personalized dashboards showing leave balances, request status, and notifications.
 Admin Panel: Administrators can manage user roles, system settings, and view reports.
-
-##Technologies Used
-Frontend: HTML, CSS, JavaScript,
-Backend: PHP
-Database: mySql
-UI Framework: Bootstrap
-Backend FRamework : Laravel
