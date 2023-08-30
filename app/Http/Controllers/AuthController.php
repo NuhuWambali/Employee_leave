@@ -43,14 +43,14 @@ class AuthController extends Controller
 
     public function postLogin(Request $request){
         $request->validate([
-            'email'=>'required',
-            'password'=>'required'
+            'email'=>'required|same:users',
+            'password'=>'required|min:6|same:users'
         ]);
         $data=$request->only('email','password');
         if(Auth::attempt($data)){
-        return redirect('/home')->with('message',"logged in successfully");
+        return redirect('/admin')->with('message',"logged in successfully");
         }    
-           return redirect('/login');
+           
     }
 
 
