@@ -11,12 +11,34 @@ use App\Models\User;
 class AuthController extends Controller
 {
     //
-    public function login(){
-        return view('auth.login');
-    }
 
     public function register(){
         return view('auth.register');
+    }
+
+    public function postRegister(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'position'=>'required',
+            'password'=>'required|min:6',
+        ]);
+        $data=$request->all();
+        $this->create($data);
+        return redirect('/admin')->with('message','Successfully Reqistered! PLease Login');
+    }
+
+    public function create(array $data){
+        return User::create([
+            'name'=>$data['name'],
+            'email'=>$data['email'],
+            'password'=>Hash::make($data['password']),
+        ]);
+    }
+
+
+    public function login(){
+        return view('auth.login');
     }
 
     public function postLogin(Request $request){
@@ -27,29 +49,11 @@ class AuthController extends Controller
         $data=$request->only('email','password');
         if(Auth::attempt($data)){
         return redirect('/home')->with('message',"logged in successfully");
-        }
-            
-        return redirect('/login');
+        }    
+           return redirect('/login');
     }
 
-    public function postRegister(Request $request){
-        $request->validate([
-            'name'=>'required',
-            'email'=>'required|email|unique:users',
-            'password'=>'required|min:6',
-        ]);
-        $data=$request->all();
-        $this->create($data);
-        return redirect('/')->with('message','Successfully Reqistered! PLease Login');
-    }
 
-    public function create(array $data){
-        return User::create([
-            'name'=>$data['name'],
-            'email'=>$data['email'],
-            'password'=>Hash::make($data['password']),
-        ]);
-    }
 
     public function logout(){
         session::flush();

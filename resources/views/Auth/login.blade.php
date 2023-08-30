@@ -9,7 +9,7 @@
                 <div class="card-body p-md-1 ">
                     <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign in</p>
+                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
                         <form class="mx-1 mx-md-4">
                         
                         <div class="d-flex flex-row align-items-center mb-2">
@@ -31,6 +31,7 @@
                         <div class="d-flex justify-content-center mx-4 mb-5 ">
                             <button type="button" class="btn btn-primary btn-lg">Login</button>
                         </div>
+                        <p><a style="text-decoration:none;color:orange" href="{{route('register')}}">I have an account! <span  style="font-size:larger;color:blue;margin-left:5px">Login</span></a></p>
                         </form>
                     </div>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 pt-5">

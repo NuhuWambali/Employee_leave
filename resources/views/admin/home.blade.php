@@ -1,7 +1,6 @@
 @extends('Layouts.mainLayouts')
 @section('title','Admin')
 @section('content')
-
      <div class="row">
               <div class="col-xl-4 col-sm-6 grid-margin stretch-card">
                 <div class="card">
@@ -15,7 +14,7 @@
                       </div>
                       <div class="col-3">
                         <div class="icon icon-box-success ">
-                          <span class="mdi mdi-human icon-item"></span>
+                          <span class="mdi mdi-account-supervisor icon-item"></span>
                         </div>
                       </div>
                     </div>
