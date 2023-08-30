@@ -43,8 +43,8 @@ class AuthController extends Controller
 
     public function postLogin(Request $request){
         $request->validate([
-            'email'=>'required|same:users',
-            'password'=>'required|min:6|same:users'
+            'email'=>'required',
+            'password'=>'required|min:6'
         ]);
         $data=$request->only('email','password');
         if(Auth::attempt($data)){
@@ -58,7 +58,7 @@ class AuthController extends Controller
     public function logout(){
         session::flush();
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     }
 
 }
