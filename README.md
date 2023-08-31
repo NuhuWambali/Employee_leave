@@ -7,5 +7,5 @@
    Secure user authentication and authorization for employees, and administrators.
 2. Admin Panel
    Administrators can manage user roles, system settings, and view reports.
-## the project is still in developement
+## the project is still in development
 more features will be added later on!, thank you for visiting this repository
