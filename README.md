@@ -2,6 +2,10 @@
 
 
  Welcome to the Employee Leave Management System repository! This is a web-based application designed to streamline and automate the process of managing employee leave requests within an organization. With this system, employees can request leave, managers can approve or reject requests, and administrators can manage user accounts and system settings.
+ :sparkles: Welcome to My Project! :sparkles:
+
+This project is aimed at creating a magical experience for users. :unicorn:
+
 
 ##Features
 
