@@ -3,7 +3,7 @@
 @section('content')
 <section style="background-color: #eee;height:100vh">
         <div class="container pt-3 ">
-            <div class="row d-flex justify-content-center align-items-center " style="margin-top:30px">
+            <div class="row d-flex justify-content-center align-items-center " style="margin-top:10px">
             <div class="col-md-12">
                 <div class="card text-black" style="border-radius: 25px; margin-bottom:20px">
                 <div class="card-body p-md-1 ">
@@ -39,8 +39,8 @@
                         <div class="d-flex flex-row align-items-center mb-2">
                             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="form3Example3c">Position</label>
-                            <input type="text" id="form3Example5c" class="form-control @error('position') is-invalid @enderror" name="position" value="{{old('position')}}" />
+                            <label class="form-label" for="form3Example2c">Position</label>
+                            <input type="text" id="form3Example2c" class="form-control @error('position') is-invalid @enderror" name="position" value="{{old('position')}}" />
                             @error('position')
                             <div class="invalid-feedback">
                                 {{$message}}

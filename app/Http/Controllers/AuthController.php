@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {
@@ -25,17 +26,19 @@ class AuthController extends Controller
         ]);
         $data=$request->all();
         $this->create($data);
-        return redirect('/admin')->with('message','Successfully Reqistered! PLease Login');
+        Alert::success('Successfully Register ','Please Login To The System ');
+        return to_route('login');
+       
     }
 
     public function create(array $data){
         return User::create([
             'name'=>$data['name'],
             'email'=>$data['email'],
+            'position'=>$data['position'],
             'password'=>Hash::make($data['password']),
         ]);
     }
-
 
     public function login(){
         return view('auth.login');
@@ -46,14 +49,12 @@ class AuthController extends Controller
             'email'=>'required',
             'password'=>'required|min:6'
         ]);
+        
         $data=$request->only('email','password');
         if(Auth::attempt($data)){
-        return redirect('/admin')->with('message',"logged in successfully");
-        }    
-           
+          return to_route('admin')->with('message',"logged in successfully");
+        }     
     }
-
-
 
     public function logout(){
         session::flush();

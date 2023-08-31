@@ -1,20 +1,16 @@
 @extends('Layouts.auth.authmain')
 @section('title','Login')
 @section('content')
-<section style="background-color: #eee;height:100vh">
+@include('sweetalert::alert')
+    <section style="background-color: #eee;height:100vh">              
         <div class="container pt-3 " >
-            <div class="row d-flex justify-content-center align-items-center" style="margin-top:78px">
+            <div class="row d-flex justify-content-center align-items-center" style="margin-top:78px" >
             <div class="col-md-12">
                 <div class="card text-black" style="border-radius: 25px; margin-bottom:20px">
                 <div class="card-body p-md-1 ">
                     <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                    @if(session()->has('message'))
-                        <div class="alert alert-success">
-                            <button type="button" class="close" aria-hidden="true" data-dismiss="alert">x</button>
-                            {{session()->get('message')}}
-                        </div>
-                     @endif
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">  
+                    
                         <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
                         <form class="mx-1 mx-md-4" action="{{route('postLogin')}}" method="post">  
                             @csrf                      
