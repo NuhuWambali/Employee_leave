@@ -1,9 +1,9 @@
-##Employee_Leave_Management_System
-
-
-Welcome to the Employee Leave Management System repository! This is a web-based application designed to streamline and automate the process of managing employee leave requests within an organization. With this system, employees can request leave, managers can approve or reject requests, and administrators can manage user accounts and system settings.
+#Employee_Leave_Management_System
+ Welcome to the Employee Leave Management System repository! This is a web-based application designed to streamline and automate the process of managing employee leave requests within an organization. With this system, employees can request leave, managers can approve or reject requests, and administrators can manage user accounts and system settings.
 
 ##Features
+
+
 User Authentication: Secure user authentication and authorization for employees, and administrators.
 Leave Request: Employees can submit leave requests specifying dates, leave type, and reason.
 Leave Approval: Managers can review and approve/reject leave requests based on company policies.
