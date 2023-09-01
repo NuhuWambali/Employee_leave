@@ -32,7 +32,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
+            <a class="nav-link" href="{{route('leaveType')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-human-greeting"></i>
               </span>

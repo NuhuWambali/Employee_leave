@@ -52,7 +52,8 @@ class AuthController extends Controller
         
         $data=$request->only('email','password');
         if(Auth::attempt($data)){
-          return to_route('admin')->with('message',"logged in successfully");
+        Alert::success('Successfully Logged In ','Manage Leaves Digitally..!');
+        return to_route('admin');
         }     
     }
 

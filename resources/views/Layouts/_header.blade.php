@@ -10,3 +10,6 @@
     <link rel="stylesheet" href="{{asset('user/vendors/owl-carousel-2/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
     <link rel="shortcut icon" href="{{asset('user/images/favicon.png')}}" />
+    <link rel="stylesheet" href="{{asset('user/css/customStyling.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
