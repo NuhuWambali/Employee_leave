@@ -2,10 +2,10 @@
 @section('title','Leave Type')
 @section('content')
 @if(session()->has('message'))
-<div class="alert alert-success  " role="alert">
-   {{session()->get('message')}}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
-</div>
+<div class="alert alert-success">
+       <button type="button" class="close" aria-hidden="true" data-dismiss="alert">x</button>
+       {{session()->get('message')}}
+  </div>
 @endif
 
 <h3 class="text-center mt-3">Add Leave Type</h3>
@@ -30,32 +30,23 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="color:#fff">1</td>
-                    <td style="color:#fff">John Doe</td>
-                    <td style="color:#fff">johndoe@example.com</td>
+                    @foreach($getLeaveTypes as $index=>$getLeaveType )
+                    <td style="color:#fff">{{$index+$getLeaveTypes->firstItem()}}</td>
+                    <td style="color:#fff">{{$getLeaveType->name}}</td>
+                    <td style="color:#fff">{{$getLeaveType->created_by}}</td>
                     <td >
-                        <button type="button" class="btn bg-success">Active</button>
+                       <a href=""><button type="button" class="btn bg-success">{{$getLeaveType->status}}</button></a> 
                     </td>
                     <td><a href="" class="btn btn-danger">
                               <i class="fas fa-trash"></i>
                          </a>
                     </td>
                 </tr>
-                <tr>
-                    <td style="color:#fff">1</td>
-                    <td style="color:#fff">John Doe</td>
-                    <td style="color:#fff">johndoe@example.com</td>
-                    <td >
-                        <p class="btn btn-danger">Inactive</p>
-                    </td>
-                    <td><a href="" class="btn btn-danger">
-                              <i class="fas fa-trash"></i>
-                         </a>
-                    </td>
-                </tr>
+                @endforeach
                 
             </tbody>
         </table>
+            {!!$getLeaveTypes->withQueryString()->links('pagination::bootstrap-5')!!}
     </div>
     
 @endsection

@@ -17,16 +17,20 @@ class AdminController extends Controller
         return view('admin.home');
     }
 
-    public function leaveType(){
-        return view('admin.leaveType');
+    public function leaveType(LeaveType $getLeaveType){
+        $getLeaveTypes=LeaveType::paginate(3);
+        return view('admin.leaveType',compact('getLeaveTypes'));
     }
 
     public function addLeaveType(Request $request){
          $AuthenticatedUser=Auth::user();
          $addLeaveType=new LeaveType;
          $addLeaveType->name=$request->name;
-         $addLeaveType->create_by=$AuthenticatedUser->name;
+         $addLeaveType->created_by=$AuthenticatedUser->name;
          $addLeaveType->save();
         return to_route('leaveType')->with('message','Leave Type Added Successfully');
     }
+
+
+  
 }

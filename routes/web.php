@@ -16,5 +16,6 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middlew
 Route::get('/admin', [AdminController::class, 'indexForAdmin'])->name('admin')->middleware('auth');
 Route::get('/leaveType', [AdminController::class, 'leaveType'])->name('leaveType')->middleware('auth');
 Route::post('addLeaveType',[AdminController::class, 'addLeaveType'])->name('addLeaveType')->middleware('auth');
+Route::get('/leaveTypeLIst', [AdminController::class, 'getLeaveTypeList'])->name('getLeaveTypeList')->middleware('auth');
 
 
