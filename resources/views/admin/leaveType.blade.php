@@ -12,7 +12,7 @@
 <form id="leaveTypeForm" action="{{route('addLeaveType')}}" method="post">
     @csrf
     <div class="text-center mt-3">
-            <input type="text" id="textInput"  name="name" placeholder="enter leave type" id="name" style="margin-right:30px">
+            <input type="text"  name="name" placeholder="       enter leave type" id="name" style="margin-right:30px">
             <button id="addLeaveTypeBtn" type="submit" class="btn btn-primary ">Add Leave Type</button>
     </div>
 </form>
@@ -35,7 +35,7 @@
                     <td style="color:#fff">{{$getLeaveType->name}}</td>
                     <td style="color:#fff">{{$getLeaveType->created_by}}</td>
                     <td >
-                       <a href=""><button type="button" class="btn bg-success">{{$getLeaveType->status}}</button></a> 
+                       <a href=""><button type="button" class="btn bg-success">{{$getLeaveType->status}}</button></a>
                     </td>
                     <td><a href="" class="btn btn-danger">
                               <i class="fas fa-trash"></i>
@@ -43,10 +43,10 @@
                     </td>
                 </tr>
                 @endforeach
-                
+
             </tbody>
         </table>
             {!!$getLeaveTypes->withQueryString()->links('pagination::bootstrap-5')!!}
     </div>
-    
+
 @endsection

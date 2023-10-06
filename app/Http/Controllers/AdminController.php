@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     //
     public function indexForAdmin(){
-      
+
         return view('admin.home');
     }
 
@@ -31,6 +31,11 @@ class AdminController extends Controller
         return to_route('leaveType')->with('message','Leave Type Added Successfully');
     }
 
+    public function getAllUsers(User $users){
+        $allUsers=User::all();
+        return view('admin.users',compact('allUsers'));
+    }
 
-  
+
+
 }

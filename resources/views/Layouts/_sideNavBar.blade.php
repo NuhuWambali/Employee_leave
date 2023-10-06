@@ -21,7 +21,7 @@
               </span>
               <span class="menu-title">Employees</span>
             </a>
-           
+
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="../../pages/forms/basic_elements.html">
@@ -48,12 +48,12 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../../pages/icons/mdi.html">
+            <a class="nav-link" href="{{route('getAllUsers')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-account"></i>
               </span>
-              <span class="menu-title">Manage Admin</span>
+              <span class="menu-title">Manage Users</span>
             </a>
-          </li>    
+          </li>
         </ul>
       </nav>
