@@ -19,7 +19,7 @@
                         </div>
                       </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Registered Employee</h6>
+                    <h6 class="text-muted font-weight-normal">Registered Users</h6>
                   </div>
                 </div>
               </div>
@@ -124,6 +124,6 @@
                 </div>
               </div>
      </div>
-           
+
 
 @endsection

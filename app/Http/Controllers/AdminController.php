@@ -35,7 +35,26 @@ class AdminController extends Controller
         $allUsers=User::all();
         return view('admin.users',compact('allUsers'));
     }
+    public function activateUser($id, Request $request)
+    {
+        $user = User::findOrFail($id);
+        $user->status='active';
+        $user->save();
+        return redirect()->back()->with('success', 'User has been activated successfully.');
 
+    }
+    public function deactivateUser($id,Request $request)
+    {
+        $user = User::findOrFail($id);
+        $user->status='inactive';
+        $user->save();
+        return redirect()->back()->with('success', 'User has been deactivated successfully.');
+
+    }
 
 
 }
+//if ($user->status === 'active') {
+//            return redirect()->back()->with('error', 'User is already active.');
+//        }
+//        $user->update(['status' => 'active']);

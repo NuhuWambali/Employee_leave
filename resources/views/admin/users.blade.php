@@ -1,9 +1,9 @@
 @extends('Layouts.mainLayouts')
-@section('title','Leave Type')
+@section('title','Users')
 @section('content')
 
-    <div class="container mt-4 ">
-        <h4 class="text-center">All Users</h4>
+    <div class="container mt-4 mb-3">
+        <h4 class="text-center mb-5">All Users</h4>
         <table class="table table-striped">
             <thead>
             <tr class="tableHeader">
@@ -22,9 +22,15 @@
                     <td style="color:#fff">{{$user->position}}</td>
                     <td >
                         @if($user->status === 'active')
-                            <a href=""><button type="button" class="btn bg-success">{{$user->status}}</button></a>
+                            <form action="{{ route('users.deactivate', $user->id) }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn bg-success">{{$user->status}}</button>
+                            </form>
                         @else
-                            <a href=""><button type="button" class="btn bg-danger">{{$user->status}}</button></a>
+                            <form action="{{ route('users.activate', $user->id) }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn bg-danger">{{$user->status}}</button>
+                            </form>
                         @endif
                     </td>
                     <td><a href="" class="btn btn-danger">
