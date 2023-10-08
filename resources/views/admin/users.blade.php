@@ -1,7 +1,6 @@
 @extends('Layouts.mainLayouts')
 @section('title','Users')
 @section('content')
-
     <div class="container mt-4 mb-3">
         <h4 class="text-center mb-5">All Users</h4>
         <table class="table table-striped">
@@ -24,24 +23,24 @@
                         @if($user->status === 'active')
                             <form action="{{ route('users.deactivate', $user->id) }}" method="post">
                                 @csrf
-                                <button type="submit" class="btn bg-success">{{$user->status}}</button>
+                                <button type="submit" class="btn bg-success" onsubmit="return confirm('Are you sure you want to deactivate this user?');">{{$user->status}}</button>
                             </form>
                         @else
                             <form action="{{ route('users.activate', $user->id) }}" method="post">
                                 @csrf
-                                <button type="submit" class="btn bg-danger">{{$user->status}}</button>
+                                <button type="submit" class="btn bg-danger" onsubmit="return confirm('Are you sure you want to deactivate this user?');">{{$user->status}}</button>
                             </form>
                         @endif
                     </td>
-                    <td><a href="" class="btn btn-danger">
-                            <i class="fas fa-trash"></i>
-                        </a>
+                    <td>
+                        <form action="{{ route('users.delete', $user->id) }}" method="post">
+                            @csrf
+                            <button type="submit" class="btn bg-danger" onsubmit="return confirm('Are you sure you want to delete this user?');"><span class="fas fa-trash"></span></button>
+                        </form>
                     </td>
             </tr>
             @endforeach
-
             </tbody>
         </table>
-
     </div>
 @endsection

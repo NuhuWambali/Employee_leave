@@ -20,6 +20,7 @@ Route::get('/leaveTypeLIst', [AdminController::class, 'getLeaveTypeList'])->name
 Route::get('/users',[AdminController::class, 'getAllUsers'])->name('getAllUsers')->middleware('auth');
 Route::post('/users/{id}/activate',[AdminController::class, 'activateUser'])->name('users.activate')->middleware('auth');
 Route::post('/users/{id}/deactivate',[AdminController::class, 'deactivateUser'])->name('users.deactivate')->middleware('auth');
+Route::post('/users/{id}/delete',[AdminController::class, 'deleteUser'])->name('users.delete')->middleware('auth');
 
 
 

@@ -51,7 +51,12 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'User has been deactivated successfully.');
 
     }
-
+    public function deleteUser($id,Request $request)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->back()->with('success', 'User has been deleted successfully.');
+    }
 
 }
 //if ($user->status === 'active') {
