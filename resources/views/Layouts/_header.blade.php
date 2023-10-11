@@ -2,6 +2,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Employee Leave | @yield('title')</title>
     <!-- plugins:css -->
+    <link rel="stylesheet" href="{{asset('user/bootstrap/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('user/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('user/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{asset('user/vendors/jvectormap/jquery-jvectormap.css')}}">
