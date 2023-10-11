@@ -11,7 +11,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {
-    
+
 
     public function register(){
         return view('auth.register');
@@ -28,7 +28,7 @@ class AuthController extends Controller
         $this->create($data);
         Alert::success('Successfully Register ','Please Login To The System ');
         return to_route('login');
-       
+
     }
 
     public function create(array $data){
@@ -49,12 +49,19 @@ class AuthController extends Controller
             'email'=>'required',
             'password'=>'required|min:6'
         ]);
-        
-        $data=$request->only('email','password');
-        if(Auth::attempt($data)){
-        Alert::success('Successfully Logged In ','Manage Leaves Digitally..!');
-        return to_route('admin');
-        }     
+        $data=$request->only('email','password',);
+        if(Auth::attempt($data)) {
+            $user = Auth::user();
+            if ($user->status === 'inactive') {
+                Auth::logout();
+                return redirect()->route('login')->with('message',"User is inactive, you can't login");
+            }
+            return to_route('admin')->with('message','Successfully Logged In ', 'Manage Leaves Digitally..!' );
+        }
+        else{
+            return to_route('login')->with('message','Logged in Fail','Incorrect Username or Password!');
+        }
+
     }
 
     public function logout(){
@@ -62,7 +69,6 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/');
     }
-
 }
 
 

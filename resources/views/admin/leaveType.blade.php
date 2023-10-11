@@ -12,7 +12,7 @@
 <form id="leaveTypeForm" action="{{route('addLeaveType')}}" method="post">
     @csrf
     <div class="text-center mt-3">
-            <input type="text"  name="name" placeholder="       enter leave type" id="name" style="margin-right:30px">
+            <input type="text"  name="name" placeholder="       Enter leave type" id="name" style="margin-right:30px">
             <button id="addLeaveTypeBtn" type="submit" class="btn btn-primary ">Add Leave Type</button>
     </div>
 </form>

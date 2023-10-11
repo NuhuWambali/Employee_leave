@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+use Livewire\WithPagination;
 
 
 class AdminController extends Controller
 {
     //
+    use WithPagination;
     public function indexForAdmin(){
 
         return view('admin.home');

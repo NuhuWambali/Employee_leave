@@ -1,4 +1,4 @@
-    
+
     <script src="{{asset('user/vendors/js/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
@@ -17,3 +17,4 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{asset('user/js/chart.js')}}"></script>
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
